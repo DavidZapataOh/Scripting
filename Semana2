@@ -235,11 +235,6 @@ namespace Trigonometria2
                     Console.ReadLine();
                     break;
             }
-        }
-
-        public void Triangulo()
-        {
-
-        }
+        }   
     }
 }
