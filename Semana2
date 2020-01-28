@@ -218,7 +218,6 @@ namespace Trigonometria2
                     Console.WriteLine("Angulo d = " + d4 + "º");
                     Console.WriteLine("Angulo e = " + e4 + "º");
                     
-
                     Console.WriteLine("                                             b  ."); 
                     Console.WriteLine("                                            ..  .");
                     Console.WriteLine("                                        . .   a .");
