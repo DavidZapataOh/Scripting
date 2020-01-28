@@ -1,0 +1,245 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Trigonometria2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Solución de triangulos");
+            Console.ReadLine();
+            Console.WriteLine("Elije un caso:");
+            Console.WriteLine("1. Entrada: b,z,y | Salida: x");
+            Console.WriteLine("2. Entrada: d,b,y | Salida: z");
+            Console.WriteLine("3. Entrada: w,d,x | Salida: y");
+            Console.WriteLine("4. Entrada: w,t,c | Salida: x");
+            int op = int.Parse(Console.ReadLine());
+
+            switch (op)
+            {
+                case 1:
+                    Console.Write("Ingresa el angulo b: ");
+                    double b = double.Parse(Console.ReadLine());
+                    Console.Write("Ingresa el cateto z: ");
+                    double z = double.Parse(Console.ReadLine());
+                    Console.Write("Ingresa el cateto y: ");
+                    double y = double.Parse(Console.ReadLine());
+                    Console.Write("Presiona enter para continuar...");
+                    Console.ReadLine();
+
+                    double t = Math.Round(Math.Sqrt(Math.Pow(z, 2) + Math.Pow(y, 2)), 3);
+                    double arad = Math.Asin(y / t);
+                    double brad = Math.Asin(z / t);
+                    double a = Math.Round((arad * 180) / Math.PI, 3);
+                    double c = Math.Round((brad * 180) / Math.PI, 3);
+
+                    double e = 180 - c;
+                    double d = 180 - e - b;
+                    double drad = (d * Math.PI) / 180;
+                    double erad = (e * Math.PI) / 180;
+                    double bradd = (b * Math.PI) / 180;
+                    double x = Math.Round((t * Math.Sin(bradd)) / Math.Sin(drad));
+                    double w = Math.Round((t * Math.Sin(erad)) / Math.Sin(drad));
+
+                    Console.WriteLine("--------------------------------------------------------------------");
+                    Console.WriteLine("Lado x = " + x);
+                    Console.WriteLine("--------------------------------------------------------------------");
+                    Console.WriteLine("Otros datos:");
+                    Console.WriteLine("Lado y = " + y);
+                    Console.WriteLine("Lado z = " + z);
+                    Console.WriteLine("Lado w = " + w);
+                    Console.WriteLine("Lado t = " + t);
+                    Console.WriteLine("Angulo a = " + a + "º");
+                    Console.WriteLine("Angulo b = " + b + "º");
+                    Console.WriteLine("Angulo c = " + c + "º");
+                    Console.WriteLine("Angulo d = " + d + "º");
+                    Console.WriteLine("Angulo e = " + e + "º");
+                    Console.ReadLine();
+
+                    Console.WriteLine("                                             b  .");
+                    Console.WriteLine("                                            ..  .");
+                    Console.WriteLine("                                        . .   a .");
+                    Console.WriteLine("                                    .  .        .");
+                    Console.WriteLine("                          w     .   .           .");
+                    Console.WriteLine("                            .    .              .");
+                    Console.WriteLine("                        .     .                 . z");
+                    Console.WriteLine("                    .      .      t             .");
+                    Console.WriteLine("                .       .                       .");
+                    Console.WriteLine("            .        .                          .");
+                    Console.WriteLine("        .      e  .   c                      .  .");
+                    Console.WriteLine("    d .  .  .  .  .  .  .  .  .  .  .  .  .  .  .");
+                    Console.WriteLine("           x                   y");
+                    Console.ReadLine();
+                    break;
+
+                case 2:
+                    Console.Write("Ingresa el angulo d: ");
+                    double d2 = double.Parse(Console.ReadLine());
+                    Console.Write("Ingresa el angulo b: ");
+                    double b2 = double.Parse(Console.ReadLine());
+                    Console.Write("Ingresa el cateto y: ");
+                    double y2 = double.Parse(Console.ReadLine());
+                    Console.Write("Presiona enter para continuar...");
+                    Console.ReadLine();
+
+                    double e2 = 180 - d2 - b2;
+                    double c2 = 180 - e2;
+                    double a2 = 180 - 90 - c2;
+                    double a2rad = (a2 * Math.PI) / 180;
+                    double t2 = Math.Round(y2 / Math.Sin(a2rad), 3);
+                    double z2 = Math.Round(Math.Sqrt(Math.Pow(t2,2) - Math.Pow(y2,2)));
+
+                    double d2rad = (d2 * Math.PI) / 180;
+                    double e2rad = (e2 * Math.PI) / 180;
+                    double b2radd = (b2 * Math.PI) / 180;
+                    double x2 = Math.Round((t2 * Math.Sin(b2radd)) / Math.Sin(d2rad));
+                    double w2 = Math.Round((t2 * Math.Sin(e2rad)) / Math.Sin(d2rad));
+
+                    Console.WriteLine("--------------------------------------------------------------------");
+                    Console.WriteLine("Lado z = " + z2);
+                    Console.WriteLine("--------------------------------------------------------------------");
+                    Console.WriteLine("Otros datos:");
+                    Console.WriteLine("Lado x = " + x2);
+                    Console.WriteLine("Lado y = " + y2);
+                    Console.WriteLine("Lado w = " + w2);
+                    Console.WriteLine("Lado t = " + t2);
+                    Console.WriteLine("Angulo a = " + a2 + "º");
+                    Console.WriteLine("Angulo b = " + b2 + "º");
+                    Console.WriteLine("Angulo c = " + c2 + "º");
+                    Console.WriteLine("Angulo d = " + d2 + "º");
+                    Console.WriteLine("Angulo e = " + e2 + "º");
+                    Console.ReadLine();
+
+                    Console.WriteLine("                                             b  .");
+                    Console.WriteLine("                                            ..  .");
+                    Console.WriteLine("                                        . .   a .");
+                    Console.WriteLine("                                    .  .        .");
+                    Console.WriteLine("                          w     .   .           .");
+                    Console.WriteLine("                            .    .              .");
+                    Console.WriteLine("                        .     .                 . z");
+                    Console.WriteLine("                    .      .      t             .");
+                    Console.WriteLine("                .       .                       .");
+                    Console.WriteLine("            .        .                          .");
+                    Console.WriteLine("        .      e  .   c                      .  .");
+                    Console.WriteLine("    d .  .  .  .  .  .  .  .  .  .  .  .  .  .  .");
+                    Console.WriteLine("           x                   y");
+                    Console.ReadLine();
+                    break;
+
+                case 3:
+                    Console.Write("Ingresa el cateto w: ");
+                    double w3 = double.Parse(Console.ReadLine());
+                    Console.Write("Ingresa el angulo d: ");
+                    double d3 = double.Parse(Console.ReadLine());
+                    Console.Write("Ingresa el cateto x: ");
+                    double x3 = double.Parse(Console.ReadLine());
+                    Console.Write("Presiona enter para continuar...");
+                    Console.ReadLine();
+
+                    double d3rad = (d3 * Math.PI) / 180;
+                    double t3 = Math.Round(Math.Sqrt(Math.Pow(w3,2) + Math.Pow(x3,2) - (2*w3*x3*Math.Cos(d3rad))), 3);
+                    double b3rad = Math.Asin((x3*Math.Sin(d3rad))/t3);
+                    double b3 = Math.Round((b3rad * 180) / Math.PI, 2);
+                    double e3 = Math.Round(180 - d3 - b3, 3);
+                    double c3 = Math.Round(180 - e3, 2);
+                    double a3 = Math.Round(180 - 90 - c3, 2);
+                    double c3rad = (c3 * Math.PI) / 180;
+                    double z3 = Math.Round((Math.Sin(c3rad) * t3));
+                    double y3 = Math.Round(Math.Sqrt(Math.Pow(t3, 2) - Math.Pow(z3, 2)));
+
+                    Console.WriteLine("--------------------------------------------------------------------");
+                    Console.WriteLine("Lado y = " + y3);
+                    Console.WriteLine("--------------------------------------------------------------------");
+                    Console.WriteLine("Otros datos:");
+                    Console.WriteLine("Lado x = " + x3 + "º");
+                    Console.WriteLine("Lado z = " + z3 + "º");
+                    Console.WriteLine("Lado w = " + w3 + "º");
+                    Console.WriteLine("Lado t = " + t3 + "º");
+                    Console.WriteLine("Angulo a = " + a3 + "º");
+                    Console.WriteLine("Angulo b = " + b3 + "º");
+                    Console.WriteLine("Angulo c = " + c3 + "º");
+                    Console.WriteLine("Angulo d = " + d3 + "º");
+                    Console.WriteLine("Angulo e = " + e3 + "º");
+                    Console.ReadLine();
+
+                    Console.WriteLine("                                             b  .");
+                    Console.WriteLine("                                            ..  .");
+                    Console.WriteLine("                                        . .   a .");
+                    Console.WriteLine("                                    .  .        .");
+                    Console.WriteLine("                          w     .   .           .");
+                    Console.WriteLine("                            .    .              .");
+                    Console.WriteLine("                        .     .                 . z");
+                    Console.WriteLine("                    .      .      t             .");
+                    Console.WriteLine("                .       .                       .");
+                    Console.WriteLine("            .        .                          .");
+                    Console.WriteLine("        .      e  .   c                      .  .");
+                    Console.WriteLine("    d .  .  .  .  .  .  .  .  .  .  .  .  .  .  .");
+                    Console.WriteLine("           x                   y");
+                    Console.ReadLine();
+                    break;
+
+                case 4:
+                    Console.Write("Ingresa el cateto w: ");
+                    double w4 = double.Parse(Console.ReadLine());
+                    Console.Write("Ingresa el cateto t: ");
+                    double t4 = double.Parse(Console.ReadLine());
+                    Console.Write("Ingresa el angulo c: ");
+                    double c4 = double.Parse(Console.ReadLine());
+                    Console.Write("Presiona enter para continuar...");
+                    Console.ReadLine();
+
+                    double e4 = 180 - c4;
+                    double a4 = 180 - 90 - c4;
+                    double a4rad = (a4 * Math.PI) / 180;
+                    double e4rad = (e4 * Math.PI) / 180;
+                    double y4 = Math.Round((Math.Sin(a4rad) * t4));
+                    double z4 = Math.Round(Math.Sqrt(Math.Pow(t4, 2) - Math.Pow(y4, 2)));
+                    double d4rad = Math.Asin((t4 * Math.Sin(e4rad)) / w4);
+                    double d4 = Math.Round((d4rad * 180) / Math.PI, 2);
+                    double b4 = Math.Round(180 - d4 - e4, 2);
+                    double b4rad = (b4 * Math.PI) / 180;
+                    double x4 = Math.Round((w4 * Math.Sin(b4rad) / Math.Sin(e4rad)));
+
+                    Console.WriteLine("--------------------------------------------------------------------");
+                    Console.WriteLine("Lado x = " + x4);
+                    Console.WriteLine("--------------------------------------------------------------------");
+                    Console.WriteLine("Otros datos:");
+                    Console.WriteLine("Lado y = " + y4);
+                    Console.WriteLine("Lado z = " + z4);
+                    Console.WriteLine("Lado w = " + w4);
+                    Console.WriteLine("Lado t = " + t4);
+                    Console.WriteLine("Angulo a = " + a4 + "º");
+                    Console.WriteLine("Angulo b = " + b4 + "º");
+                    Console.WriteLine("Angulo c = " + c4 + "º");
+                    Console.WriteLine("Angulo d = " + d4 + "º");
+                    Console.WriteLine("Angulo e = " + e4 + "º");
+                    
+
+                    Console.WriteLine("                                             b  ."); 
+                    Console.WriteLine("                                            ..  .");
+                    Console.WriteLine("                                        . .   a .");
+                    Console.WriteLine("                                    .  .        .");
+                    Console.WriteLine("                          w     .   .           .");
+                    Console.WriteLine("                            .    .              .");
+                    Console.WriteLine("                        .     .                 . z");
+                    Console.WriteLine("                    .      .      t             .");
+                    Console.WriteLine("                .       .                       .");
+                    Console.WriteLine("            .        .                          .");
+                    Console.WriteLine("        .      e  .   c                      .  .");
+                    Console.WriteLine("    d .  .  .  .  .  .  .  .  .  .  .  .  .  .  .");
+                    Console.WriteLine("           x                   y");
+                    Console.ReadLine();
+                    break;
+            }
+        }
+
+        public void Triangulo()
+        {
+
+        }
+    }
+}
