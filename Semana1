@@ -79,9 +79,7 @@ namespace Trigonometría
                     Console.WriteLine("Angulo a = " + a3);
                     Console.ReadLine();
                     break;
-            }
-
-            
+            }           
         }
     }
 }
